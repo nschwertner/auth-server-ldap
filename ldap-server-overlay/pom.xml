@@ -31,6 +31,31 @@
           </overlays>
         </configuration>
       </plugin>
+    <plugin>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-maven-plugin</artifactId>
+      <configuration>
+
+        <systemProperties>
+          <systemProperty>
+            <name>ldap.server</name>
+	    <value>ldap://localhost:389</value>
+          </systemProperty>
+          <systemProperty>
+            <name>ldap.url</name>
+	    <value>ldap://localhost:389</value>
+          </systemProperty>
+          <systemProperty>
+            <name>ldap.base</name>
+	    <value>dc=example,dc=com</value>
+          </systemProperty>
+        </systemProperties>
+        <webApp>
+     	 <contextPath>/ldap-openid-connect-server</contextPath>
+  		</webApp>
+      </configuration>	
+    </plugin>
+
     </plugins>
    </build>
    <dependencies>

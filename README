@@ -1,1 +1,10 @@
 This is a version of the MITREid Connect server that speaks to a backend LDAP system for its user information and authentication.
+```
+cd ldap-server-overlay
+mvn package jetty:run-war
+```
+
+In Eclipse, you can set up a Debug configuration to run these same goals ("package
+jetty:run-war") on the ldap-server-overlay project.
+
+
