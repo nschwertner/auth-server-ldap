@@ -66,11 +66,15 @@
 			</bean>
 		</constructor-arg>
 	</bean>	
+	<bean id="authStrategy" class="org.springframework.ldap.core.support.DefaultTlsDirContextAuthenticationStrategy">
+	</bean>
 		
 	<bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
 		<property name="url" value="${ldap.url}" />
 		<property name="base" value="${ldap.base}" />
+		<property name="authenticationStrategy" ref="authStrategy" /> 
 	</bean>
+
 
 	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
 		<constructor-arg name="contextSource" ref="contextSource" />
