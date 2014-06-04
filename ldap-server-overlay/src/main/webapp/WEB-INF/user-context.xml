@@ -77,7 +77,7 @@
 	</bean>
 
         <bean id="springSecurityAuthenticationSource"
-            class="org.springframework.security.ldap.SpringSecurityAuthenticationSource" />
+            class="org.springframework.security.ldap.authentication.SpringSecurityAuthenticationSource" />
 
 	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
 		<constructor-arg name="contextSource" ref="contextSource" />
