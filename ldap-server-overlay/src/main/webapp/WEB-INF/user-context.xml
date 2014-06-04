@@ -73,8 +73,11 @@
 		<property name="url" value="${ldap.url}" />
 		<property name="base" value="${ldap.base}" />
 		<property name="authenticationStrategy" ref="authStrategy" /> 
+		<property name="authenticationSource" ref="springSecurityAuthenticationSource" />
 	</bean>
 
+        <bean id="springSecurityAuthenticationSource"
+            class="org.springframework.security.ldap.SpringSecurityAuthenticationSource" />
 
 	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
 		<constructor-arg name="contextSource" ref="contextSource" />
