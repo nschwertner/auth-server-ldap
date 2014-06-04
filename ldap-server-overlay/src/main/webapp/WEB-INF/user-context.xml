@@ -36,7 +36,7 @@
     <property name="searchSystemEnvironment" value="true" />
 </bean>  
 
-	<security:authentication-manager alias="authenticationManager">
+	<security:authentication-manager alias="authenticationManager" erase-credentials="false">
 		<security:authentication-provider ref="ldapAuthProvider" />
 	</security:authentication-manager>
 	
